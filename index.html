@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Bingo Secret</title>
+<meta name="description" content="Coche tes défis secrets et crie BINGO quand tout est accompli !">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Bodoni+Moda:opsz,wght@6..96,500&family=Montserrat:wght@500;800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <!-- Dossier "agent secret" -->
+    <svg class="dossier" viewBox="0 0 90 110" aria-hidden="true">
+      <path d="M8 6h70c4 0 6 3 4 6l-2 4v88H10c-4 0-6-3-4-6l2-4V6z" fill="#e9dcc3" stroke="#3a3530" stroke-width="2"/>
+      <rect x="18" y="16" width="54" height="46" fill="#b9543f"/>
+      <path d="M31 40h28l-3-4h-4v-8c0-3-3-4-7-4s-7 1-7 4v8h-4z" fill="#e9dcc3"/>
+      <path d="M36 44c0 5 4 8 9 8s9-3 9-8zM28 62c2-7 9-10 17-10s15 3 17 10z" fill="#e9dcc3"/>
+      <path d="M20 72h50M20 80h50M20 88h36" stroke="#3a3530" stroke-width="2"/>
+    </svg>
+
+    <div class="stamp" aria-hidden="true"><span>TOP SECRET</span></div>
+
+    <h1 class="title">
+      <span class="script">Le bingo</span>
+      <span class="serif">SECRET</span>
+    </h1>
+
+    <!-- Brin fleuri -->
+    <svg class="sprig" viewBox="0 0 160 90" aria-hidden="true" fill="none" stroke="#1d211f" stroke-width="1.3" stroke-linecap="round">
+      <path d="M10 80 C50 60 90 45 150 8"/>
+      <path d="M130 20c4-8 12-10 16-8-2 6-8 10-16 8zM112 32c2-9 10-13 15-11-1 7-7 12-15 11zM118 26c8 0 13 5 12 10-7 0-12-4-12-10zM96 42c9-1 14 4 13 9-7 1-12-3-13-9z"/>
+      <circle cx="60" cy="58" r="14"/><circle cx="60" cy="58" r="4"/>
+      <path d="M60 44c-5 5-5 23 0 28M46 58c5-5 23-5 28 0M50 48c7 2 13 13 20 20M70 48c-2 7-13 13-20 20"/>
+      <circle cx="30" cy="70" r="9"/><circle cx="30" cy="70" r="2.5"/>
+      <path d="M24 64c4 4 8 8 12 12M36 64c-4 4-8 8-12 12"/>
+    </svg>
+
+    <p class="brief">Ta mission, si tu l'acceptes : accomplir chaque défi sans te faire repérer. Touche une case une fois le défi réussi.</p>
+  </header>
+
+  <div class="progress" aria-live="polite">
+    <span>Mission</span>
+    <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+    <span class="count" id="count">0 / 8</span>
+  </div>
+
+  <ul class="grid" id="grid"></ul>
+
+  <footer>
+    <p class="shout">Criez BINGO quand tout est accompli !</p>
+    <div id="resetZone">
+      <button class="reset" id="reset" type="button">Recommencer</button>
+    </div>
+  </footer>
+</main>
+
+<div class="bingo" id="bingo" hidden role="dialog" aria-modal="true" aria-labelledby="bingoTitle">
+  <div class="bingo-card">
+    <h2 id="bingoTitle">BINGO !</h2>
+    <p>Mission accomplie, agent.<br>Lève-toi et crie-le bien fort !</p>
+    <button type="button" id="closeBingo">Retour à la grille</button>
+  </div>
+</div>
+<canvas id="confetti" hidden></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
